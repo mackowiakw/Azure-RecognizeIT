@@ -1,0 +1,31 @@
+{
+  "bindings": [
+    {
+      "authLevel": "Anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get", "post"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "blob",
+      "name": "storage",
+      "path": "photos/{rand-guid}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "name": "processQueue",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "process-tasks",
+      "connection": "AzureQueueStorageConnectionString"
+    }
+  ],
+  "scriptFile": "../dist/upload/index.js"
+}

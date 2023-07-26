@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "notificationData",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "notifications",
+      "connection": "AzureQueueStorageConnectionString"
+    }
+  ],
+  "scriptFile": "../dist/notify/index.js"
+}

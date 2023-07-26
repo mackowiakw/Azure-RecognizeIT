@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "processQueueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "process-tasks",
+      "connection": "AzureQueueStorageConnectionString"
+    },
+    {
+      "name": "notificationQueue",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "notifications",
+      "connection": "AzureQueueStorageConnectionString"
+    }
+  ],
+  "scriptFile": "../dist/process/index.js"
+}
